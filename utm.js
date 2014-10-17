@@ -10,8 +10,6 @@
 
 /* jshint node:true, laxbreak:true *//* global define */
 'use strict';
-if (typeof module!='undefined' && module.exports) var LatLonE = require('./latlon-ellipsoid.js'); // CommonJS (Node.js)
-
 
 /**
  * Creates a Utm coordinate object.
@@ -32,7 +30,7 @@ if (typeof module!='undefined' && module.exports) var LatLonE = require('./latlo
  * @example
  *   var utmCoord = new Utm(31, 'N', 448251, 5411932);
  */
-function Utm(zone, hemisphere, easting, northing, datum) {
+Utm = function (zone, hemisphere, easting, northing, datum) {
     // allow instantiation without 'new'
     if (!(this instanceof Utm)) return new Utm(zone, hemisphere, easting, northing, datum);
 
@@ -48,7 +46,7 @@ function Utm(zone, hemisphere, easting, northing, datum) {
     this.easting = Number(easting);
     this.northing = Number(northing);
     this.datum = datum;
-}
+};
 
 
 /**
@@ -333,7 +331,8 @@ if (typeof Math.atanh == 'undefined') {
 
 
 /** Extend String object with method to trim whitespace from string
- *  (q.v. blog.stevenlevithan.com/archives/faster-trim-javascript) */
+ *  (q.v. blog.stevenlevithan.com/arcif (!Meteor || (typeof module!='undefined' && module.exports)) var LatLonE = require('./latlon-ellipsoid.js'); // CommonJS (Node.js)
+ hives/faster-trim-javascript) */
 if (typeof String.prototype.trim == 'undefined') {
     String.prototype.trim = function() {
         return String(this).replace(/^\s\s*/, '').replace(/\s\s*$/, '');

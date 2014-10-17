@@ -8,32 +8,8 @@
 
 /* jshint node:true, laxbreak:true *//* global define */
 'use strict';
-if (typeof module!='undefined' && module.exports) var Utm = require('./utm.js'); // CommonJS (Node.js)
-if (typeof module!='undefined' && module.exports) var LatLonE = require('./latlon-ellipsoid.js'); // CommonJS (Node.js)
-
 
 /* qv www.fgdc.gov/standards/projects/FGDC-standards-projects/usng/fgdc_std_011_2001_usng.pdf p10 */
-
-
-/**
- * Latitude bands C..X 8° each, covering 80°S to 84°N
- * @private
- */
-Mgrs.latBands = 'CDEFGHJKLMNPQRSTUVWXX'; // X is repeated for 80-84°N
-
-
-/**
- * 100km grid square column (‘e’) letters repeat every third zone
- * @private
- */
-Mgrs.e100kLetters = [ 'ABCDEFGH', 'JKLMNPQR', 'STUVWXYZ' ];
-
-
-/**
- * 100km grid square row (‘n’) letters repeat every other zone
- * @private
- */
-Mgrs.n100kLetters = ['ABCDEFGHJKLMNPQRSTUV', 'FGHJKLMNPQRSTUVABCDE'];
 
 
 /**
@@ -54,7 +30,7 @@ Mgrs.n100kLetters = ['ABCDEFGHJKLMNPQRSTUV', 'FGHJKLMNPQRSTUVABCDE'];
  * @example
  *   var mgrsRef = new Mgrs(31, 'U', 'D', 'Q', 48251, 11932); // 31U DQ 48251 11932
  */
-function Mgrs(zone, band, e100k, n100k, easting, northing, datum) {
+Mgrs = function (zone, band, e100k, n100k, easting, northing, datum) {
     // allow instantiation without 'new'
     if (!(this instanceof Mgrs)) return new Mgrs(zone, band, e100k, n100k, easting, northing, datum);
 
@@ -71,7 +47,28 @@ function Mgrs(zone, band, e100k, n100k, easting, northing, datum) {
     this.n100k = n100k;
     this.easting = Number(easting);
     this.northing = Number(northing);
-}
+};
+
+
+/**
+ * Latitude bands C..X 8° each, covering 80°S to 84°N
+ * @private
+ */
+Mgrs.latBands = 'CDEFGHJKLMNPQRSTUVWXX'; // X is repeated for 80-84°N
+
+
+/**
+ * 100km grid square column (‘e’) letters repeat every third zone
+ * @private
+ */
+Mgrs.e100kLetters = ['ABCDEFGH', 'JKLMNPQR', 'STUVWXYZ'];
+
+
+/**
+ * 100km grid square row (‘n’) letters repeat every other zone
+ * @private
+ */
+Mgrs.n100kLetters = ['ABCDEFGHJKLMNPQRSTUV', 'FGHJKLMNPQRSTUVABCDE'];
 
 
 /**

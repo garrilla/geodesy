@@ -6,8 +6,6 @@
 
 /* jshint node:true *//* global define */
 'use strict';
-if (typeof module!='undefined' && module.exports) var LatLonE = require('./latlon-ellipsoid.js'); // CommonJS (Node.js)
-
 
 /**
  * Creates an OsGridRef object.
@@ -22,13 +20,13 @@ if (typeof module!='undefined' && module.exports) var LatLonE = require('./latlo
  * @example
  *   var grid = new OsGridRef(651409, 313177);
  */
-function OsGridRef(easting, northing) {
+OsGridRef = function (easting, northing) {
     // allow instantiation without 'new'
     if (!(this instanceof OsGridRef)) return new OsGridRef(easting, northing);
 
     this.easting = Math.floor(Number(easting));   // truncate if necessary to left of 1m grid square
     this.northing = Math.floor(Number(northing)); // truncate if necessary to bottom of 1m grid square
-}
+};
 
 
 /**
@@ -77,7 +75,6 @@ OsGridRef.latLonToOsGrid = function(point) {
     var IV = ν*cosφ;
     var V = (ν/6)*cos3φ*(ν/ρ-tan2φ);
     var VI = (ν/120) * cos5φ * (5 - 18*tan2φ + tan4φ + 14*η2 - 58*tan2φ*η2);
-
     var Δλ = λ-λ0;
     var Δλ2 = Δλ*Δλ, Δλ3 = Δλ2*Δλ, Δλ4 = Δλ3*Δλ, Δλ5 = Δλ4*Δλ, Δλ6 = Δλ5*Δλ;
 

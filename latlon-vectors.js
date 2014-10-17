@@ -8,10 +8,6 @@
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 
 /* jshint node:true *//* global define */
-'use strict';
-if (typeof module!='undefined' && module.exports) var Vector3d = require('./vector3d.js'); // CommonJS (Node.js)
-if (typeof module!='undefined' && module.exports) var Geo = require('./geo.js'); // CommonJS (Node.js)
-
 
 /**
  * Creates a LatLonV point on spherical model earth.
@@ -31,7 +27,7 @@ if (typeof module!='undefined' && module.exports) var Geo = require('./geo.js');
  * @example
  *   var p1 = new LatLonV(52.205, 0.119);
  */
-function LatLonV(lat, lon, height, radius) {
+LatLonV = function (lat, lon, height, radius) {
     // allow instantiation without 'new'
     if (!(this instanceof LatLonV)) return new LatLonV(lat, lon, height, radius);
 
@@ -43,7 +39,7 @@ function LatLonV(lat, lon, height, radius) {
     this.lon    = Number(lon);
     this.height = Number(height);
     this.radius = Number(radius);
-}
+};
 
 
 /**

@@ -16,9 +16,6 @@
 
 /* jshint node:true *//* global define */
 'use strict';
-if (typeof module!='undefined' && module.exports) var Vector3d = require('./vector3d.js'); // CommonJS (Node.js)
-if (typeof module!='undefined' && module.exports) var Geo = require('./geo.js'); // CommonJS (Node.js)
-
 
 /**
  * Creates lat/lon (polar) point with latitude & longitude values and height above ellipsoid, on a
@@ -36,7 +33,7 @@ if (typeof module!='undefined' && module.exports) var Geo = require('./geo.js');
  * @example
  *     var p1 = new LatLonE(51.4778, -0.0016, LatLonE.datum.WGS84);
  */
-function LatLonE(lat, lon, datum, height) {
+LatLonE = function (lat, lon, datum, height) {
     // allow instantiation without 'new'
     if (!(this instanceof LatLonE)) return new LatLonE(lat, lon, datum, height);
 
@@ -47,7 +44,7 @@ function LatLonE(lat, lon, datum, height) {
     this.lon = Number(lon);
     this.datum = datum;
     this.height = Number(height);
-}
+};
 
 
 /**

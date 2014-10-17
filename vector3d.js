@@ -12,7 +12,7 @@
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 
 /* jshint node:true *//* global define */
-'use strict';
+//'use strict';
 
 
 /**
@@ -28,14 +28,15 @@
  * @param {number} y - Y component of vector.
  * @param {number} z - Z component of vector.
  */
-function Vector3d(x, y, z) {
+
+Vector3d = function (x, y, z) {
     // allow instantiation without 'new'
     if (!(this instanceof Vector3d)) return new Vector3d(x, y, z);
 
     this.x = Number(x);
     this.y = Number(y);
     this.z = Number(z);
-}
+};
 
 
 /**

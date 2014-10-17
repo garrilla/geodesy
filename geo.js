@@ -9,7 +9,7 @@
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 
 /* jshint node:true *//* global define */
-'use strict';
+//;
 
 
 /**
@@ -17,7 +17,7 @@
  *
  * @namespace
  */
-var Geo = {};
+Geo = {};
 
 
 // note Unicode Degree = U+00B0. Prime = U+2032, Double prime = U+2033

@@ -3,7 +3,7 @@
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 
 /* jshint node:true, bitwise:false *//* global define */
-'use strict';
+//'use strict';
 
 
 /**

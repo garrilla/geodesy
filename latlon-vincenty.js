@@ -8,8 +8,6 @@
 
 /* jshint node:true *//* global define */
 'use strict';
-if (typeof module!='undefined' && module.exports) var LatLonE = require('./latlon-ellipsoid.js'); // CommonJS (Node.js)
-
 
 /**
  * Direct and inverse solutions of geodesics on the ellipsoid using Vincenty formulae

@@ -5,8 +5,6 @@
 
 /* jshint node:true *//* global define */
 'use strict';
-if (typeof module!='undefined' && module.exports) var Geo = require('./geo'); // CommonJS (Node.js)
-
 
 /**
  * Creates a LatLon point on the earth's surface at the specified latitude / longitude.
@@ -23,7 +21,7 @@ if (typeof module!='undefined' && module.exports) var Geo = require('./geo'); //
  * @example
  *     var p1 = new LatLon(52.205, 0.119);
  */
-function LatLon(lat, lon, height, radius) {
+LatLon = function (lat, lon, height, radius) {
     // allow instantiation without 'new'
     if (!(this instanceof LatLon)) return new LatLon(lat, lon, height, radius);
 
