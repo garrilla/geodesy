@@ -5,6 +5,10 @@ Libraries of geodesy functions implemented in JavaScript – intended to serve a
 starting-points for people wanting to develop geodesy applications (in JavaScript or other languages),
 though they can also be used as-is.
 
+Note
+----
+This library is a slight adaptatation from Chris Veness's original. It was adapted for incorporation in the MeteorJS framework. The original is probably a better starting place for all except those who are intending to use it in Meteor.
+
 latlon.js
 ---------
 
