@@ -9,6 +9,10 @@ Note
 ----
 This library is a slight adaptatation from Chris Veness's original. It was adapted for incorporation in the MeteorJS framework. The original is probably a better starting place for all except those who are intending to use it in Meteor.
 
+The Meteor package is available at [garrilla:geodesy-libraies](https://github.com/garrilla/geodesy-libraries-for-Meteor) on [atmosphere](https://atmospherejs.com/garrilla/geodesy-libraries) or can be added from the command lin of your Meteor project root
+
+    meteor add garrilla:geodesy-libraries
+
 latlon.js
 ---------
 
